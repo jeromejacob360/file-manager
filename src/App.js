@@ -33,7 +33,7 @@ function App() {
       setCollections(res);
     }
 
-    async function levelOneCalls() {
+    async function oddLevelCalls() {
       const docIds = await getLevelOneDocs(currentLocation, setLoading);
       setLevelOneDocs(docIds);
     }
@@ -51,7 +51,7 @@ function App() {
 
     if (level === 0) rootLevelCalls();
     else if (level % 2 === 1) {
-      levelOneCalls(currentLocation, setLoading);
+      oddLevelCalls(currentLocation, setLoading);
     } else if (level % 2 === 0) {
       evenLevelCalls();
     }
